@@ -1,0 +1,16 @@
+var _exercism$xelm$Bob$containsLetters = function (question) {
+	return A2(
+		_elm_lang$core$Regex$contains,
+		_elm_lang$core$Regex$regex('([a-zA-Z])'),
+		question);
+};
+var _exercism$xelm$Bob$isShouting = function (question) {
+	return _exercism$xelm$Bob$containsLetters(question) && _elm_lang$core$Native_Utils.eq(
+		_elm_lang$core$String$toUpper(question),
+		question);
+};
+var _exercism$xelm$Bob$hey = function (question) {
+	return _exercism$xelm$Bob$isShouting(question) ? 'Whoa, chill out!' : (A2(_elm_lang$core$String$endsWith, '?', question) ? 'Sure.' : (_elm_lang$core$Native_Utils.eq(
+		_elm_lang$core$String$trim(question),
+		'') ? 'Fine. Be that way!' : 'Whatever.'));
+};
